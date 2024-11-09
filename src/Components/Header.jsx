@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 py-8 -ml-2">
+    <div className="navbar bg-base-100 py-8 -ml-2  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,11 +25,36 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-6 shadow"
           >
-            <Link to="/">Home</Link>
-            <Link className="my-2" to="/coffees">
-              Coffees
-            </Link>
-            <Link to="/dashboard">Dashboard</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `${
+                  isActive ? "text-warning font-semibold" : "hover:text-warning"
+                }`
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/coffees"
+              className={({ isActive }) =>
+                `${
+                  isActive ? "text-warning font-semibold" : "hover:text-warning"
+                }`
+              }
+            >
+              Coffee
+            </NavLink>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                `${
+                  isActive ? "text-warning font-semibold" : "hover:text-warning"
+                }`
+              }
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </div>
         <Link to="/" className="text-2xl font-bold">
@@ -38,9 +63,36 @@ const Header = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="flex gap-8 px-1 text-xl">
-          <Link to="/">Home</Link>
-          <Link to="/coffees">Coffees</Link>
-          <Link to="/dashboard">Dashboard</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${
+                isActive ? "text-warning font-semibold" : "hover:text-warning"
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/coffees"
+            className={({ isActive }) =>
+              ` ${
+                isActive ? "text-warning font-semibold" : "hover:text-warning"
+              }`
+            }
+          >
+            Coffee
+          </NavLink>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              ` ${
+                isActive ? "text-warning font-semibold" : "hover:text-warning"
+              }`
+            }
+          >
+            Dashboard
+          </NavLink>
         </ul>
       </div>
     </div>

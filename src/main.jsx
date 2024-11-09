@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import Coffee from "./Components/Coffee";
 import Dashboard from "./Components/Dashboard";
 import CoffeeCard from "./Components/CoffeeCard";
+import CoffeeDetails from "./Components/CoffeeDetails";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/coffee/:id",
+        element: <CoffeeDetails></CoffeeDetails>,
+        loader: () => fetch("/coffees.json"),
       },
     ],
   },

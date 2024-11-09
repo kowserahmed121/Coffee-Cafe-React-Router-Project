@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import ReuseText from "./ReuseText";
 import Category from "./Category";
 
+
 const Home = () => {
   const categories = useLoaderData();
   return (
