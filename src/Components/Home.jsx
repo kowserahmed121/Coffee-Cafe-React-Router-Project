@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import Hero from "./Hero";
 import ReuseText from "./ReuseText";
 import Category from "./Category";
@@ -16,6 +16,7 @@ const Home = () => {
       ></ReuseText>
       {/* tabs */}
       <Category categories={categories}></Category>
+      <Outlet></Outlet>
     </div>
   );
 };

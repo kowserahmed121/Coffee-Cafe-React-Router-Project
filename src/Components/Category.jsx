@@ -1,13 +1,20 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Category = ({ categories }) => {
   return (
     <div>
       <div role="tablist" className="tabs tabs-lifted">
         {categories.map((category) => (
-          <Link to="/" className="tab text-xl" key={category.id}>
+          <NavLink
+            to={`/category/${category.category}`}
+            key={category.id}
+            role="tab"
+            className={({ isActive }) =>
+              `tab text-2xl  ${isActive ? "tab-active" : ""}`
+            }
+          >
             {category.category}
-          </Link>
+          </NavLink>
         ))}
       </div>
     </div>
