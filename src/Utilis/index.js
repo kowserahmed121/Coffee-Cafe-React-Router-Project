@@ -19,4 +19,12 @@ const addToFavorite = (coffee) => {
   toast.success('Successfully  Added Coffee');
 };
 
-export { addToFavorite, allLikeCoffee };
+
+const removeCoffee = (id) =>{
+  const loveCoffee = allLikeCoffee();
+  const remaining = loveCoffee.filter(coffee => coffee.id != id)
+  localStorage.setItem("loveCoffee", JSON.stringify(remaining));
+  toast.success('Successfully  Remove Coffee');
+}
+
+export { addToFavorite, allLikeCoffee, removeCoffee };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReuseText from "./ReuseText";
-import { allLikeCoffee } from "../Utilis";
+import { allLikeCoffee, removeCoffee } from "../Utilis";
 import Card from "./Card";
 
 const Dashboard = () => {
@@ -9,6 +9,13 @@ const Dashboard = () => {
     const likeCoffee = allLikeCoffee();
     setCoffee(likeCoffee);
   }, []);
+
+  const handleRemove = (id) => {
+    removeCoffee(id);
+    const likeCoffee = allLikeCoffee();
+    setCoffee(likeCoffee);
+  };
+
   return (
     <div>
       <ReuseText
@@ -17,7 +24,7 @@ const Dashboard = () => {
       ></ReuseText>
       <div className="grid grid-cols-3 gap-6 mb-8">
         {coffee.map((card) => (
-          <Card card={card} key={card.id}></Card>
+          <Card handleRemove ={handleRemove} card={card} key={card.id}></Card>
         ))}
       </div>
     </div>
